@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#09090b" />
+  <!-- Safe Area (80% circle centered) -->
+  <g transform="translate(256, 256)">
+    <circle cx="0" cy="0" r="160" fill="#18181b" />
+    <text x="0" y="20" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" 
+          font-size="120" 
+          font-weight="800" 
+          letter-spacing="-0.03em" 
+          fill="#ffffff" 
+          text-anchor="middle">
+      DAN
+    </text>
+    <text x="0" y="65" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
+          font-size="16" 
+          font-weight="700" 
+          letter-spacing="0.3em" 
+          fill="#a1a1aa" 
+          text-anchor="middle">
+      DARLINGAN
+    </text>
+  </g>
+</svg>

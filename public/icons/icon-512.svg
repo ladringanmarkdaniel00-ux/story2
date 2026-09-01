@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background with maskable safe zone (circle in center 80%) -->
+  <rect width="512" height="512" fill="url(#bgGrad)" />
+  
+  <!-- Subtle accent circle within maskable safe area -->
+  <circle cx="256" cy="256" r="190" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2" />
+  
+  <!-- Monogram Logo -->
+  <g transform="translate(256, 256)">
+    <text x="0" y="24" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" 
+          font-size="160" 
+          font-weight="800" 
+          letter-spacing="-0.04em" 
+          fill="#ffffff" 
+          text-anchor="middle"
+          filter="url(#glow)">
+      DAN
+    </text>
+    <text x="0" y="80" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
+          font-size="20" 
+          font-weight="700" 
+          letter-spacing="0.4em" 
+          fill="#a1a1aa" 
+          text-anchor="middle">
+      DARLINGAN
+    </text>
+  </g>
+</svg>

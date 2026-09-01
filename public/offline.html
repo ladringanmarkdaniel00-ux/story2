@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>Offline | DAN - Darlingan</title>
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #fafafa;
+        color: #171717;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 20px;
+        padding: 36px 28px;
+        max-width: 420px;
+        width: 100%;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .icon-wrapper {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #f4f4f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #71717a;
+        margin-bottom: 4px;
+        position: relative;
+      }
+      .icon-wrapper.reconnecting {
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.08); opacity: 0.7; }
+      }
+      .brand {
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #a1a1aa;
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #09090b;
+      }
+      p {
+        font-size: 13px;
+        color: #71717a;
+        line-height: 1.6;
+        max-width: 320px;
+      }
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        background: #fef2f2;
+        border: 1px solid #fee2e2;
+        border-radius: 9999px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #dc2626;
+        margin-top: -4px;
+      }
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #ef4444;
+      }
+      .status-pill.online {
+        background: #f0fdf4;
+        border-color: #dcfce7;
+        color: #16a34a;
+      }
+      .status-pill.online .status-dot {
+        background-color: #22c55e;
+      }
+      .actions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.15s ease;
+      }
+      .btn-primary {
+        background: #09090b;
+        color: #ffffff;
+        border: 1px solid #09090b;
+      }
+      .btn-primary:hover {
+        background: #27272a;
+      }
+      .btn-secondary {
+        background: transparent;
+        color: #27272a;
+        border: 1px solid #e4e4e7;
+      }
+      .btn-secondary:hover {
+        background: #f4f4f5;
+      }
+      .footer-note {
+        font-size: 11px;
+        color: #a1a1aa;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main">
+      <div class="brand">DAN &bull; DARLINGAN</div>
+      
+      <div class="icon-wrapper" id="iconWrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+          <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+          <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+          <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+          <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+          <line x1="12" y1="20" x2="12.01" y2="20"></line>
+        </svg>
+      </div>
+
+      <div class="status-pill" id="statusPill">
+        <span class="status-dot"></span>
+        <span id="statusText">Network Disconnected</span>
+      </div>
+
+      <h1>No Internet Connection</h1>
+      <p>
+        You are currently browsing offline. Previously viewed stories, drafts, and shop items are preserved locally in storage.
+      </p>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="retryBtn" onclick="handleRetry()">
+          <svg id="retrySpinner" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+          <span id="btnText">Check Connection</span>
+        </button>
+
+        <a href="/" class="btn btn-secondary">
+          Open Saved App Shell
+        </a>
+      </div>
+    </main>
+
+    <div class="footer-note">
+      Automatic reconnection active &bull; Will reload when online
+    </div>
+
+    <script>
+      function updateStatus(online) {
+        var statusPill = document.getElementById('statusPill');
+        var statusText = document.getElementById('statusText');
+        if (online) {
+          statusPill.className = 'status-pill online';
+          statusText.textContent = 'Connection Restored';
+          setTimeout(function() {
+            window.location.href = '/';
+          }, 800);
+        } else {
+          statusPill.className = 'status-pill';
+          statusText.textContent = 'Network Disconnected';
+        }
+      }
+
+      window.addEventListener('online', function() {
+        updateStatus(true);
+      });
+
+      window.addEventListener('offline', function() {
+        updateStatus(false);
+      });
+
+      function handleRetry() {
+        var btn = document.getElementById('retryBtn');
+        var btnText = document.getElementById('btnText');
+        var iconWrapper = document.getElementById('iconWrapper');
+        
+        btnText.textContent = 'Connecting...';
+        iconWrapper.className = 'icon-wrapper reconnecting';
+
+        fetch('/api/health', { method: 'GET', cache: 'no-store' })
+          .then(function(res) {
+            if (res.ok) {
+              updateStatus(true);
+            } else {
+              throw new Error('Unhealthy');
+            }
+          })
+          .catch(function() {
+            setTimeout(function() {
+              btnText.textContent = 'Check Connection';
+              iconWrapper.className = 'icon-wrapper';
+              updateStatus(false);
+            }, 600);
+          });
+      }
+    </script>
+  </body>
+</html>

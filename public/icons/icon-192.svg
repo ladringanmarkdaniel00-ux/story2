@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bgGrad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" fill="url(#bgGrad192)" />
+  <g transform="translate(96, 96)">
+    <text x="0" y="12" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" 
+          font-size="64" 
+          font-weight="800" 
+          letter-spacing="-0.04em" 
+          fill="#ffffff" 
+          text-anchor="middle">
+      DAN
+    </text>
+    <text x="0" y="36" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
+          font-size="9" 
+          font-weight="700" 
+          letter-spacing="0.35em" 
+          fill="#a1a1aa" 
+          text-anchor="middle">
+      DARLINGAN
+    </text>
+  </g>
+</svg>

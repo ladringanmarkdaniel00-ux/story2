@@ -1,0 +1,104 @@
+{
+  "id": "/?source=pwa",
+  "name": "DAN - Darlingan",
+  "short_name": "DAN",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "orientation": "any",
+  "dir": "ltr",
+  "lang": "en-US",
+  "categories": [
+    "shopping",
+    "lifestyle",
+    "social",
+    "photography"
+  ],
+  "description": "Darlingan visual storytelling, curated boutique shop, and creative community.",
+  "icons": [
+    {
+      "src": "/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Curated Shop",
+      "short_name": "Shop",
+      "description": "Browse the latest collection and essentials",
+      "url": "/shop?source=pwa-shortcut",
+      "icons": [
+        {
+          "src": "/icons/shortcut-shop.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Stories & Highlights",
+      "short_name": "Stories",
+      "description": "View daily creator stories and highlights",
+      "url": "/?tab=stories&source=pwa-shortcut",
+      "icons": [
+        {
+          "src": "/icons/shortcut-stories.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Profile & Account",
+      "short_name": "Profile",
+      "description": "View your saved items and account settings",
+      "url": "/profile?source=pwa-shortcut",
+      "icons": [
+        {
+          "src": "/icons/shortcut-profile.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "DAN Desktop Experience"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "DAN Mobile Experience"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
